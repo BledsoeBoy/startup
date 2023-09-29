@@ -203,3 +203,7 @@ Modern browsers now expect web servers to exclusively use HTTPS for all communic
 
 For our work we are using the web service Caddy to act as a gateway to our different services and to host our static web application files. Caddy has ACME support built into it by default, and so all you need to do is configure Caddy with the domain name for your web server.
 
+##HTML Structure
+Remember that when putting in an image, it has to be a valid file, so the URL link must end in .jpg, .jpeg, .png, .gif. You can get this URL from an image on a website by right-clicking and going to copy the image address.
+
+Depending on what kind of header you want the sizes are determined by h1, h2, etc. To create a hyperlink put <a href="url link" </a> The three main parts of a website are its header, main, and footer, all within body. 
