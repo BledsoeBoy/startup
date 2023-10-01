@@ -37,3 +37,6 @@ I will implement these technologies within the application:
 - **Login** - Register and login players/users. Credentials securely stored in database.
 - **WebSocket** - As each user plays, time and moves used are displayed to all users. Also tells whose turn it is. 
 - **React** - Application using React to add components and request routing
+
+## Deliverables
+In this newest deliverable with the date 9/30/2023 I created all of the html pages I will need. I implemented the login initial page, an idea of how the setup should look, when setting up your own battleships, a play html page that simulates playing although does virtually nothing with just html, and finally a scores page that shows records according to time and turns spent by each player. When I want to be displayed is shown, but has a lot of placeholders, like data for the scores page, where the ships are on the setup, amongst other things. I am closest to done on the html page but I am still not sure if that is everything. I also included application images through using an icon for my header. 
