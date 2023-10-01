@@ -108,6 +108,7 @@ To update edits on the repository from GitHub to the development environment: gi
 Then make whatever changes you want and save (ctr + s)
 Then commit the changes/in other words apply the changes and save it: git commit -am "(whatever comments you want explaining what you did)"
 Then finally push the changes back to GitHub, or in other words, save the changes to the cloud of GitHub so that you can access your changes now on GitHub
+To then have everything pushed back to GitHub you need to put git push (no name) and then you can access everything in GitHub.
 
 ### Merge
 When having merge issues, just when you have the error, change the code from the text editor to where the code matches up or you add a bit of the editing from each GitHub and your development environment
