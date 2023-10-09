@@ -237,3 +237,4 @@ p {
 }
 All of the above examples are equivalent, but using the link element usually is the preferred way to define CSS.
 
+![image](https://github.com/BledsoeBoy/startup/assets/144291641/20d94f1e-1124-4e2a-b5b0-8d705d1fe3d0)
