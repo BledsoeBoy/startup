@@ -214,9 +214,9 @@ Depending on what kind of header you want the sizes are determined by h1, h2, et
 With CSS a web programmer can animate the page, deploy custom fonts, respond to user actions, and dynamically alter the entire layout of the page based on the size of a device and its orientation. Functionally, CSS is primarily concerned with defining rulesets, or simply rules. A rule is comprised of a selector that selects the elements to apply the rule to, and one or more declarations that represent the property to style with the given property value.
 There are three ways that you can associate CSS with HTML. The first way is to use the style attribute of an HTML element and explicitly assign one or more declarations.
 
-<p style="color:green">CSS</p>
+Example: <p style="color:green">CSS</p>
 The next way to associate CSS is to use the HTML style element to define CSS rules within the HTML document. The style element should appear in the head element of the document so that the rules apply to all elements of the document.
-
+Example:
 <head>
   <style>
     p {
@@ -227,13 +227,15 @@ The next way to associate CSS is to use the HTML style element to define CSS rul
 <body>
   <p>CSS</p>
 </body>
+
 The final way to associate CSS is to use the HTML link element to create a hyperlink reference to an external file containing CSS rules. The link element must appear in the head element of the document.
 
+Example:
 <link rel="stylesheet" href="styles.css" />
 styles.css
-
 p {
   color: green;
 }
+
 All of the above examples are equivalent, but using the link element usually is the preferred way to define CSS.
 
