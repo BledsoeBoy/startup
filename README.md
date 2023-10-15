@@ -39,4 +39,16 @@ I will implement these technologies within the application:
 - **React** - Application using React to add components and request routing
 
 ## Deliverables
-In this newest deliverable with the date 9/30/2023 I created all of the html pages I will need. I implemented the login initial page, an idea of how the setup should look, when setting up your own battleships. I added a play html page that simulates playing although does virtually nothing with just html, and I also included a scores page that shows records according to time and turns spent by each player. What I want to be displayed is shown, but has a lot of placeholders, like data for the scores page, where the ships are on the setup, amongst other things. I am closest to done on the html index page but I am still not sure if that is everything. There is login implementation but has a placeholder. There is data to be stored in the scores page and a websocket will be used to get actual time date of time and turns as the users play the game. There are also links to be able to switch between each of the pages.
+### HTML deliverable
+In this newest deliverable with the date 9/30/2023 I created all of the html pages I will need. I implemented the login initial page, an idea of how the setup should look, when setting up your own battleships. I added a play html page that simulates playing although does virtually nothing with just html, and I also included a scores page that shows records according to time and turns spent by each player. What I want to be displayed is shown, but has a lot of placeholders, like data for the scores page, where the ships are on the setup, amongst other things. I am closest to done on the html index page but I am still not sure if that is everything. There is login implementation but has a placeholder. There is data to be stored in the scores page and a web socket will be used to get actual time date of time and turns as the users play the game. There are also links to be able to switch between each of the pages.
+
+### CSS deliverable
+For this deliverable, I properly styled the application into a styling very close to the final version without interaction. Without interaction, I cannot include all of the styling, but it is close.
+
+- **Header, footer, and main content body** - The footer element of my website is completed and has proper formatting to fit screen sizes.
+- **Navigation elements** - I added all navigation elements to look good and like a real webpage. Done.
+- **Responsive to window resizing** - I need to work on making my graph of buttons for my battleship gameplay a little better on smaller device sizes, but other than that my website adapts to different screen sizes.
+- **Application elements** - Used good contrast and spacing. 
+- **Application text content** - Consistent fonts
+- **Application images** - I have an image on the main page, styled to still look pleasing visually.
+- **Buttons** - There is a high use of buttons in my startup, and they are all programmed to have good formatting and visuals. 
