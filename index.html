@@ -7,6 +7,7 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico"></link>
 
         <link rel="stylesheet" href="main.css" />
+        <script src="login.js"></script>
 
             <!-- Include bootstrap CSS framework -->
     <link
@@ -37,11 +38,10 @@
                 width="300" />
                 <h1>Welcome</h1>
                 <p>Login to play</p>
-                <form method="get" action="setup.html">
-                <label for="name">Name</label>
+                <div>
                     <input type="text" id="name" placeholder="Your name here">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
+                    <button class="btn btn-primary" onclick="login()">Login</button>
+                </div>
             </div>
         </main>
 
