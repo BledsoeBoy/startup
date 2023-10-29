@@ -13,12 +13,16 @@
     opacity: 0.7;
   }
   
-  .event {
-    color: rgb(69, 69, 69);
+  .event1 {
+    color: rgb(118, 190, 210);
   }
   
-  .player-event {
-    color: rgb(165, 220, 235);
+  .event2 {
+    color: rgb(0, 255, 55);
   }
 
-  
+  .resetbtn {
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+  }

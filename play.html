@@ -38,19 +38,19 @@
             Player:
             <span class="player-name"></span>
             <div id="player-messages">
-              <div class="event"><span class="player-event">Bob's </span>turn number</div>
-              <div class="event"><span class="player-event">Bob's </span>time</div>
-              <div class="event"><span class="player-event">Angel's </span>turn number</div>
-              <div class="event"><span class="player-event">Angel's </span>time</div>
+              <div id="score" class="event1" ><span class="player1Turn"></span>'s turn number</div>
+              <!-- <div class="event1" ><span class="player1Time"></span>'s time</div> -->
+              <div class="event2" ><span class="player-event">Angel</span>'s turn number</div>
             </div>
           </div>
-            <div class="players">
+
+            <div class="resetbtn">
               <form method="get" action="setup.html">
                 <button type="submit" class="btn btn-danger">Restart</button>
             </form>
             </div>
-          </div>
-          <div>
+
+          <div class="game">
             <table>
               <tr>
                 <th></th>
@@ -66,49 +66,49 @@
                 <tr>
                 <td>A</td>
                 <td>
-                  <button class="btn btn-primary">
+                  <button id="A1" class="btn btn-primary" onclick="game.pressButton(this)">
                     <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                     </svg>
                   </button>
                 </td>
                 <td>
-                    <button class="btn btn-primary">
+                    <button id="A2" class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
                   </td>
                   <td>
-                    <button class="btn btn-primary">
+                    <button id="A3" class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
                   </td>
                   <td>
-                    <button class="btn btn-primary">
+                    <button id="A4" class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
                   </td>
                   <td>
-                    <button class="btn btn-primary">
+                    <button id="A5" class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
                   </td>
                   <td>
-                    <button class="btn btn-primary">
+                    <button id="A6" class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
                   </td>
                   <td>
-                    <button class="btn btn-primary">
+                    <button id="A7" class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
                   </td>
                   <td>
-                    <button class="btn btn-primary">
+                    <button id="A8"class="btn btn-primary" onclick="game.pressButton(this)">
                       <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                       </svg>
                     </button>
@@ -116,49 +116,49 @@
                 <tr>
                     <td>B</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="B1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="B2"class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="B3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="B4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="B5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="B6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="B7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="B8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
@@ -167,49 +167,49 @@
                 <tr>
                     <td>C</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="C1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="C2" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="C3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="C4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="C5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="C6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="C7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="C8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
@@ -218,49 +218,49 @@
                 <tr>
                     <td>D</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="D1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="D2" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="D3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="D4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="D5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="D6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="D7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="D8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
@@ -269,49 +269,49 @@
                 <tr>
                     <td>E</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="E1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="E2" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="E3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="E4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="E5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="E6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="E7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="E8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
@@ -320,49 +320,49 @@
                 <tr>
                     <td>F</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="F1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="F2" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="F3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="F4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="F5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="F6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="F7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="F8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
@@ -371,49 +371,49 @@
                 <tr>
                     <td>G</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="G1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="G2" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="G3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="G4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="G5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="G6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="G7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="G8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
@@ -422,49 +422,49 @@
                 <tr>
                     <td>H</td>
                     <td>
-                      <button class="btn btn-primary">
+                      <button id="H1" class="btn btn-primary" onclick="game.pressButton(this)">
                         <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                         </svg>
                       </button>
                     </td>
                     <td>
-                        <button class="btn btn-primary">
+                        <button id="H2" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="H3" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="H4" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="H5" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="H6" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="H7" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>
                       </td>
                       <td>
-                        <button class="btn btn-primary">
+                        <button id="H8" class="btn btn-primary" onclick="game.pressButton(this)">
                           <svg aria-hidden="true" viewBox="100 100 100 100" height="100" width="100">
                           </svg>
                         </button>

@@ -1,7 +1,3 @@
 .play-button {
-    padding-bottom: 0.5em;
-  }
-
-  .play-button{
-    padding-bottom: 2em; 
+    padding: 0.5em 2em;
   }
