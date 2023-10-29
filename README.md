@@ -52,3 +52,10 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Application text content** - Consistent fonts
 - **Application images** - I have an image on the main page, styled to still look pleasing visually.
 - **Buttons** - There is a high use of buttons in my startup, and they are all programmed to have good formatting and visuals. 
+### JavaScript deliverable
+- **Login** - I have working LocalStorage to be able to display the user's login info on the player html page
+- **Gameplay Setup** - I created a way so the coordinates for the ships are stored in a different local storage array, while also demonstrating that the square coordinates on the grid will change color accordingly, but have not yet figured how to connect the two.
+- **Gameplay Interaction** - I did my absolute best on trying to implement working gameplay. I had it check to see if the coordinates selected were used on the initial setup and based on those results, returns a square a certain color, but a lot of this did not work for some reason. I tried 8 hours working on this with 2 hours on the rest
+- **Scoring** - According to the gameplay, which did not work right, the scoring is supposed to be based on turns taken, but because gameplay did not work, this also did not work very well.
+
+Overall I tried more than 12 hours on this and I couldn't get it to work very well still, but hey, I really did try. 
