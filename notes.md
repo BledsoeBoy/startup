@@ -136,13 +136,34 @@ dig - Show the DNS information for a domain
 man - Look up a command in the manual
 
 Which of the following console command creates a remote shell session?
+ssh
 
 Which of the following is true when the -la parameter is specified for the ls console command?
-Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
-Is a web certificate is necessary to use HTTPS.
-Can a DNS A record can point to an IP address or another A record.
+You can list all of the files in the directory with ls (list files). Most command line applications take parameters that are specified after you type the application name. For example, ls can list all files (even hidden ones) in a long format if you provide the parameter -la.
+
+Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain? 
+top level- click
+subdomain- banana.fruit
+root domain- bozo.click
+Is a web certificate necessary to use HTTPS? Yes. you need a SSL or TLS certificate installed on your website
+Can a DNS A record can point to an IP address or another A record? 
+Yes. A DNS A record is the most fundamental type of DNS record. The A stands for “Address,” and it's used to point a domain name to an IP address or host. You can only use an A record when you want to point to an IPv4 address. An AAAA record is required if you wish to direct your domain to an IPv6 address.
+
 Port 443, 80, 22 is reserved for which protocol?
+Each port number is assigned to a specific protocol or service. For example, port 80 is used for HTTP traffic, port 443 is used for HTTPS (HyperText Transfer Protocol Secure) traffic, and port 25 is used for SMTP traffic. The port 22 is used for Secure Shell (SSH) communication and allows remote administration access to the VM.
 What will the following code using Promises output when executed?
+Consider the following "coin toss" promise that waits ten seconds and then has a fifty percent chance of resolving or rejecting.
+
+const coinToss = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (Math.random() > 0.5) {
+      resolve('success');
+    } else {
+      reject('error');
+    }
+  }, 10000);
+});
+
 # Random Notes
 To be an exceptional web programmer, you must continually improve in four areas: 1. Technology 2. Art 3. Social 4. Discovery
 
