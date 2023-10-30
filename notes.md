@@ -1,72 +1,73 @@
 # Study Guide Midterm
-In the following code, what does the link element do? 
+1. In the following code, what does the link element do? 
 The <link> tag defines the relationship between the current document and an external resource.
 The <link> tag is most often used to link to external style sheets or to add a favicon to your website.
 The <link> element is an empty element, it contains attributes only.
 
-In the following code,  what does a div tag do? 
+2. In the following code,  what does a div tag do? 
 The <div> tag defines a division or a section in an HTML document.
 The <div> tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript.
 The <div> tag is easily styled by using the class or id attribute.
 Any sort of content can be put inside the <div> tag! 
 
-In the following code, what is the difference between the #title and .grid selector?
+3. In the following code, what is the difference between the #title and .grid selector?
 Title is an id and grid is a class. Id can be used only for one HTML element, and classes can include multiple elements.
 
-In the following code, what is the difference between padding and margin? 
+4. In the following code, what is the difference between padding and margin? 
 In general, use margins when you're adjusting the spacing of an element in relation to another element (i.e a div in relation to another div on the page), and padding when you're adjusting the look of an individual element (i.e the amount of pixels between the edge of a div and the text within it).
 Padding represents the amount of inner space an element has, while the margin is whitespace available surrounding an element.
 
-Given this HTML and this CSS how will the images be displayed using flex? The flex layout allows responsive elements within a container to be automatically arranged depending on viewport size
+5. Given this HTML and this CSS how will the images be displayed using flex? The flex layout allows responsive elements within a container to be automatically arranged depending on viewport size
 
-What does the following padding CSS do? ![image](https://github.com/BledsoeBoy/startup/assets/144291641/570cbc07-246f-4e44-b6c5-9d97e3cb0f8b)
+6. What does the following padding CSS do? ![image](https://github.com/BledsoeBoy/startup/assets/144291641/570cbc07-246f-4e44-b6c5-9d97e3cb0f8b)
 
-What does the following code using arrow syntax function declaration do? Unlike regular functions, arrow functions do not allow duplicate parameters. Shorthand to write a function, even more shorthand for functions with one line of code.
+7. What does the following code using arrow syntax function declaration do? Unlike regular functions, arrow functions do not allow duplicate parameters. Shorthand to write a function, even more shorthand for functions with one line of code.
 
-What does the following code using map with an array output? 
+8. What does the following code using map with an array output? 
 map() creates a new array from calling a function for every array element.
 map() does not execute the function for empty elements.
 map() does not change the original array.
 
-What does the following code output using getElementByID and addEventListener? 
+9. What does the following code output using getElementByID and addEventListener? 
 Add a click event to a <button> element:
 element.addEventListener("click", myFunction);
 function myFunction() {
   document.getElementById("demo").innerHTML = "Hello World";
-What does the following line of Javascript do using a # selector?
-Which of the following are true? (mark all that are true about the DOM) 
+10. What does the following line of Javascript do using a # selector?
+11. Which of the following are true? (mark all that are true about the DOM) 
 The Document Object Model (DOM) is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
 
-By default, the HTML span element has a default CSS display property value of: 
+12. By default, the HTML span element has a default CSS display property value of: 
 inline
 
-How would you use CSS to change all the div elements to have a background color of red? 
+13. How would you use CSS to change all the div elements to have a background color of red? 
  div {
       background: red;
     }
-How would you display an image with a hyperlink in HTML?
+14. How would you display an image with a hyperlink in HTML?
 <img src=“URL” alt=“descriptive text”>
 
-In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+15. In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
 element, padding, border, margin
-Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
-What will the following code output when executed using a for loop and console.log?
-How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
+16. Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
+17. What will the following code output when executed using a for loop and console.log?
+18. How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
 document.getElementById("byu").style.color = "green";
 
-What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+19. What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
 (p ol ul h2 h1 h3)
-How do you declare the document type to be html?
+
+20. How do you declare the document type to be html?
   !DOCTYPE html
   
-What is valid javascript syntax for if, else, for, while, switch statements?
+21. What is valid javascript syntax for if, else, for, while, switch statements?
 When dealing with a number variable, JavaScript supports standard mathematical operators like + (add), - (subtract), * (multiply), / (divide), and === (equality). For string variables, JavaScript supports + (concatenation) and === (equality). inequality (!==)
 const obj = { a: 1, b: 'fish' };
 for (const name in obj) {
   console.log(name);
 }
 
-What is the correct syntax for creating a javascript object?
+22. What is the correct syntax for creating a javascript object?
 There are different ways to create new objects:
 
 Create a single object, using an object literal.
@@ -86,15 +87,17 @@ const person = {
   eyeColor: "blue"
 };
 
-Is is possible to add new properties to javascript objects? Yes
+23. Is is possible to add new properties to javascript objects? Yes
 Properties are the values associated with a JavaScript object.
 A JavaScript object is a collection of unordered properties.
 Properties can usually be changed, added, and deleted, but some are read only.
 
-If you want to include JavaScript on an HTML page, which tag do you use? <script>tag 
-<script src="login.js"></script>
-Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
-Which of the following correctly describes JSON?
+24. If you want to include JavaScript on an HTML page, which tag do you use? <script>tag 
+script src="login.js"</script
+
+25. Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
+
+26. Which of the following correctly describes JSON?
 JSON is a format for storing and transporting data.
 JSON is often used when data is sent from a server to a web page.
 JSON stands for JavaScript Object Notation
@@ -103,7 +106,7 @@ JSON is language independent *
 JSON is "self-describing" and easy to understand
 * The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
 
-What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+27. What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
 wget- lets you download files and interact with REST APIs
 nano- to modify or create files within SSH
 vim- create a new file, edit an existing one, or just read one
@@ -135,23 +138,25 @@ tracert - Trace the connections to a website
 dig - Show the DNS information for a domain
 man - Look up a command in the manual
 
-Which of the following console command creates a remote shell session?
+28. Which of the following console command creates a remote shell session?
 ssh
 
-Which of the following is true when the -la parameter is specified for the ls console command?
+29. Which of the following is true when the -la parameter is specified for the ls console command?
 You can list all of the files in the directory with ls (list files). Most command line applications take parameters that are specified after you type the application name. For example, ls can list all files (even hidden ones) in a long format if you provide the parameter -la.
 
-Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain? 
+30. Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain? 
 top level- click
 subdomain- banana.fruit
 root domain- bozo.click
-Is a web certificate necessary to use HTTPS? Yes. you need a SSL or TLS certificate installed on your website
-Can a DNS A record can point to an IP address or another A record? 
+
+31. Is a web certificate necessary to use HTTPS? Yes. you need a SSL or TLS certificate installed on your website
+32. Can a DNS A record can point to an IP address or another A record? 
 Yes. A DNS A record is the most fundamental type of DNS record. The A stands for “Address,” and it's used to point a domain name to an IP address or host. You can only use an A record when you want to point to an IPv4 address. An AAAA record is required if you wish to direct your domain to an IPv6 address.
 
-Port 443, 80, 22 is reserved for which protocol?
+33. Port 443, 80, 22 is reserved for which protocol?
 Each port number is assigned to a specific protocol or service. For example, port 80 is used for HTTP traffic, port 443 is used for HTTPS (HyperText Transfer Protocol Secure) traffic, and port 25 is used for SMTP traffic. The port 22 is used for Secure Shell (SSH) communication and allows remote administration access to the VM.
-What will the following code using Promises output when executed?
+
+34. What will the following code using Promises output when executed?
 Consider the following "coin toss" promise that waits ten seconds and then has a fifty percent chance of resolving or rejecting.
 
 const coinToss = new Promise((resolve, reject) => {
