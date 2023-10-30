@@ -11,35 +11,132 @@ The <div> tag is easily styled by using the class or id attribute.
 Any sort of content can be put inside the <div> tag! 
 
 In the following code, what is the difference between the #title and .grid selector?
-title is an id and grid is a class. Id can be used only for one HTML element, and classes can include multiple elements.
+Title is an id and grid is a class. Id can be used only for one HTML element, and classes can include multiple elements.
+
 In the following code, what is the difference between padding and margin? 
 In general, use margins when you're adjusting the spacing of an element in relation to another element (i.e a div in relation to another div on the page), and padding when you're adjusting the look of an individual element (i.e the amount of pixels between the edge of a div and the text within it).
-Padding represents the amount of inner space an element has, while the margin is whitespace available surrounding an element
+Padding represents the amount of inner space an element has, while the margin is whitespace available surrounding an element.
+
 Given this HTML and this CSS how will the images be displayed using flex? The flex layout allows responsive elements within a container to be automatically arranged depending on viewport size
+
 What does the following padding CSS do? ![image](https://github.com/BledsoeBoy/startup/assets/144291641/570cbc07-246f-4e44-b6c5-9d97e3cb0f8b)
 
-What does the following code using arrow syntax function declaration do?
-What does the following code using map with an array output?
-What does the following code output using getElementByID and addEventListener?
+What does the following code using arrow syntax function declaration do? Unlike regular functions, arrow functions do not allow duplicate parameters. Shorthand to write a function, even more shorthand for functions with one line of code.
+
+What does the following code using map with an array output? 
+map() creates a new array from calling a function for every array element.
+map() does not execute the function for empty elements.
+map() does not change the original array.
+
+What does the following code output using getElementByID and addEventListener? 
+Add a click event to a <button> element:
+element.addEventListener("click", myFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
 What does the following line of Javascript do using a # selector?
-Which of the following are true? (mark all that are true about the DOM)
+Which of the following are true? (mark all that are true about the DOM) 
+The Document Object Model (DOM) is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
+
 By default, the HTML span element has a default CSS display property value of: 
-How would you use CSS to change all the div elements to have a background color of red?
+inline
+
+How would you use CSS to change all the div elements to have a background color of red? 
+ div {
+      background: red;
+    }
 How would you display an image with a hyperlink in HTML?
+<img src=“URL” alt=“descriptive text”>
+
 In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
-Given the following HTML, what CSS would you use to set the text "troubl" to green and leave the "double" text unaffected?
+element, padding, border, margin
+Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
 What will the following code output when executed using a for loop and console.log?
 How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
+document.getElementById("byu").style.color = "green";
+
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+<p> <ol> <ul> <h2> <h1> <h3>
 How do you declare the document type to be html?
+  <!DOCTYPE html>
+  
 What is valid javascript syntax for if, else, for, while, switch statements?
+When dealing with a number variable, JavaScript supports standard mathematical operators like + (add), - (subtract), * (multiply), / (divide), and === (equality). For string variables, JavaScript supports + (concatenation) and === (equality). inequality (!==)
+const obj = { a: 1, b: 'fish' };
+for (const name in obj) {
+  console.log(name);
+}
+
 What is the correct syntax for creating a javascript object?
-Is is possible to add new properties to javascript objects?
-If you want to include JavaScript on an HTML page, which tag do you use?
+There are different ways to create new objects:
+
+Create a single object, using an object literal.
+Create a single object, with the keyword new.
+Define an object constructor, and then create objects of the constructed type.
+Create an object using Object.create().
+const person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+Is is possible to add new properties to javascript objects? Yes
+Properties are the values associated with a JavaScript object.
+A JavaScript object is a collection of unordered properties.
+Properties can usually be changed, added, and deleted, but some are read only.
+
+If you want to include JavaScript on an HTML page, which tag do you use? <script>tag 
+<script src="login.js"></script>
 Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
 Which of the following correctly describes JSON?
+JSON is a format for storing and transporting data.
+JSON is often used when data is sent from a server to a web page.
+JSON stands for JavaScript Object Notation
+JSON is a lightweight data interchange format
+JSON is language independent *
+JSON is "self-describing" and easy to understand
+* The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+
 What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+wget- lets you download files and interact with REST APIs
+nano- to modify or create files within SSH
+vim- create a new file, edit an existing one, or just read one
+echo - Output the parameters of the command
+cd - Change directory
+chmod- to change permissions for a file or directory on a Unix machine.
+mkdir - Make directory
+rmdir - Remove directory
+rm - Remove file(s)
+mv - Move file(s)
+cp - Copy files
+ls - List files
+curl - Command line client URL browser
+grep - Regular expression search
+find - Find files
+top - View running processes with CPU and memory usage
+df - View disk statistics
+cat - Output the contents of a file
+less - Interactively output the contents of a file
+wc - Count the words in a file
+ps - View the currently running processes
+kill - Kill a currently running process
+sudo - Execute a command as a super user (admin)
+ssh - Create a secure shell on a remote computer
+scp - Securely copy files to a remote computer
+history - Show the history of commands
+ping - Check if a website is up
+tracert - Trace the connections to a website
+dig - Show the DNS information for a domain
+man - Look up a command in the manual
+
 Which of the following console command creates a remote shell session?
+
 Which of the following is true when the -la parameter is specified for the ls console command?
 Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
 Is a web certificate is necessary to use HTTPS.
