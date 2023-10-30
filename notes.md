@@ -55,9 +55,9 @@ How would you use JavaScript to select an element with the id of “byu” and c
 document.getElementById("byu").style.color = "green";
 
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
-<p> <ol> <ul> <h2> <h1> <h3>
+(p ol ul h2 h1 h3)
 How do you declare the document type to be html?
-  <!DOCTYPE html>
+  !DOCTYPE html
   
 What is valid javascript syntax for if, else, for, while, switch statements?
 When dealing with a number variable, JavaScript supports standard mathematical operators like + (add), - (subtract), * (multiply), / (divide), and === (equality). For string variables, JavaScript supports + (concatenation) and === (equality). inequality (!==)
