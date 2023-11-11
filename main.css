@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+* {
+  font-family: 'Audiowide';
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
+    font-family: 'Audiowide';
   }
   
   header {

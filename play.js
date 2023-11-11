@@ -1,4 +1,4 @@
-class Game {
+  class Game {
     constructor() {
         const playerName1El = document.querySelector('.player-name');
         playerName1El.textContent = this.getPlayerName();
@@ -12,11 +12,11 @@ class Game {
     async pressButton(button) {
           const storedCoordinates = JSON.parse(localStorage.getItem('boat1', 'boat2', 'boat3', 'boat4'));
           if (storedCoordinates === button.id) {
-              this.updateScore(this.turn.length - 1);
-              await this.hit(button);
+              updateScore(this.turn.length - 1);
+              await hit(button);
           } else {
-            await this.miss(buuton);
-            this.saveScore(this.turn.length - 1);
+            await miss(button);
+            saveScore(this.turn.length - 1);
           }
     }
 
