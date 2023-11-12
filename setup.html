@@ -33,25 +33,23 @@
     </header>
     
     <main class="bg-secondary">
-      <div class="option-container">
-        <div class="destroyer-preview destroyer" draggable="true"></div>
-        <div class="submarine-preview submarine" draggable="true"></div>
-        <div class="cruiser-preview cruiser" draggable="true"></div>
-        <div class="battleship-preview battleship" draggable="true"></div>
-        <div class="carrier-preview carrier" draggable="true"></div>
-      </div>
-      
-      <button class="btn btn-warning" id="flip-button">Rotate Ships</button>
-      
+      <div id="info">Set up your board</div>
       <div>
         <form method="get" action="setup.html">
           <button type="submit" class="btn btn-danger">Restart</button>
         </form>
       </div>
       <div class="play-button">
-        <form method="get" action="play.html">
-          <button type="submit" class="btn btn-success">Lets Play!</button>
-        </form>
+          <button type="submit" class="btn btn-success play-button" id="start-button">Lets Play!</button>
+      </div>
+      <div class = boards-container>
+        <button class="btn btn-warning flipbtn" id="flip-button">Rotate Ships</button>
+      <div class="option-container">
+        <div id="0" class="destroyer-preview destroyer" draggable="true"></div>
+        <div id="1" class="submarine-preview submarine" draggable="true"></div>
+        <div id="2" class="cruiser-preview cruiser" draggable="true"></div>
+        <div id="3" class="battleship-preview battleship" draggable="true"></div>
+        <div id="4" class="carrier-preview carrier" draggable="true"></div>
       </div>
       <div id="gamesboard-container"></div>
     </main>

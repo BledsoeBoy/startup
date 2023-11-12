@@ -1,28 +1,86 @@
 .players {
-    flex: 1;
-    width: 100%;
-    padding: 0.5em 2em;
-  }
+  display: flex;
+  flex-direction: column;
+  margin: 0.5em 2em;
+  align-items: center;
+}
   
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: left;
+  padding: 2vmin 6vmin;
+  margin: 2vmin;
+}
   .player-name {
+    color: rgb(235, 157, 93);
+  }
+
+  #turn-display {
     color: rgb(118, 190, 210);
   }
-  
-  #player-messages {
-    padding-top: 0.25em;
-    opacity: 0.7;
+
+  #computer .destroyer,
+  #computer .submarine,
+  #computer .cruiser,
+  #computer .battleship,
+  #computer .carrier {
+    background-color: hsl(200, 100%, 50%);
   }
-  
-  .event1 {
-    color: rgb(118, 190, 210);
+
+  .boom {
+    background-color: red !important;
   }
-  
-  .event2 {
-    color: rgb(0, 255, 55);
+
+  .empty {
+    background-color: grey !important;
   }
 
   .resetbtn {
     justify-content: center;
     align-items: center;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
+  }
+
+  .destroyer {
+    background-color: brown;
+  }
+  
+  .submarine {
+    background-color: yellow;
+  }
+  
+  .cruiser {
+    background-color: rgb(100, 100, 100);
+  }
+  
+  .battleship {
+    background-color: red;
+  }
+  
+  .carrier {
+    background-color: purple;
+  }
+
+
+
+  #gamesboard-container {
+    margin: 2vmin;
+    padding: 2vmin;
+    display: flex;
+  }
+
+  .game-board {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2vmin;
+  }
+  
+  .block {
+    width: 60px;
+    height: 60px;
+    border: solid 1px hsla(0, 0%, 100%, .2);
   }
