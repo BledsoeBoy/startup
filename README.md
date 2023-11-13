@@ -54,9 +54,10 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Buttons** - There is a high use of buttons in my startup, and they are all programmed to have good formatting and visuals. 
 ### JavaScript deliverable
 - **Login** - I have working LocalStorage to be able to display the user's login info on the player html page
-- **Gameplay Setup** - I created a way so the coordinates for the ships are stored in a different local storage array, while also demonstrating that the square coordinates on the grid will change color accordingly, but have not yet figured how to connect the two.
-- **Gameplay Interaction** - I did my absolute best on trying to implement working gameplay. I had it check to see if the coordinates selected were used on the initial setup and based on those results, returns a square a certain color, but a lot of this did not work for some reason. I tried 8 hours working on this with 2 hours on the rest
-- **Scoring** - According to the gameplay, which did not work right, the scoring is supposed to be based on turns taken, but because gameplay did not work, this also did not work very well.
+- **Gameplay Setup** - I created a way so the coordinates for the ships are stored in a different local storage array, while also demonstrating corresponding square coordinates on the grid as ships, using different colors.
+- **Gameplay Interaction** - I had it check to see if the coordinates selected were used on the initial setup and based on those results, and depending on if the ship is hit or missed, the square coordinates change color adn tell you what happened.
+- **Computer play** - I implemented a new computer board that creates a setup for the ships and also attempts to hit the player's ships.
+- **Scoring** - According to the gameplay, the scoring is supposed to be based on turns taken and stores that in local storage for now.
 ### Web Services deliverable
 - **Simon deployment** - done!
 - **Node.js/Express HTTP service** - Created an HTTP service using Node.js and Express
