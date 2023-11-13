@@ -134,7 +134,7 @@ function dropShip() {
 //Start Game
 let gameOver = false
 let playerTurn
-
+let turnNumber
 startGame()
 function startGame() {
   if (playerTurn === undefined) {
@@ -143,7 +143,6 @@ function startGame() {
       playerTurn = true
       turnDisplay.textContent = 'Your Turn!'
       infoDisplay.textContent = 'The game has started'
-      turnCount.textContent = turnNumber
   }
 }
 
