@@ -57,5 +57,11 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Gameplay Setup** - I created a way so the coordinates for the ships are stored in a different local storage array, while also demonstrating that the square coordinates on the grid will change color accordingly, but have not yet figured how to connect the two.
 - **Gameplay Interaction** - I did my absolute best on trying to implement working gameplay. I had it check to see if the coordinates selected were used on the initial setup and based on those results, returns a square a certain color, but a lot of this did not work for some reason. I tried 8 hours working on this with 2 hours on the rest
 - **Scoring** - According to the gameplay, which did not work right, the scoring is supposed to be based on turns taken, but because gameplay did not work, this also did not work very well.
-
-Overall I tried more than 12 hours on this and I couldn't get it to work very well still, but hey, I really did try. 
+### Web Services deliverable
+- **Simon deployment** - done!
+- **Node.js/Express HTTP service** - Created an HTTP service using Node.js and Express
+- **Static middleware for frontend** - Frontend served up using express static middleware accomplished
+- **Calls to third party endpoints** - I didn't have time to implement this, but planning to work on it.
+- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for scoring.
+- **Frontend calls service endpoints** - I did not have time to implement this.
+Accomplished using multiple git commits with meaningful comments.
