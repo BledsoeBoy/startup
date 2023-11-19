@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -15,13 +16,15 @@ var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // GetScores
-apiRouter.get('/scores', (_req, res) => {
+apiRouter.get('/scores', async (_req, res) => {
+  const scores = await DB.getHighScores();
   res.send(scores);
 });
 
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
+apiRouter.post('/score', async (req, res) => {
+  DB.addScore(req.body);
+  const scores = await DB.getHighScores();
   res.send(scores);
 });
 
@@ -36,30 +39,30 @@ app.listen(port, () => {
 
 // updateScores considers a new score for inclusion in the high scores.
 // The high scores are saved in memory and disappear whenever the service is restarted.
-let scores = [];
-function updateScores(newScore, scores) {
-  let found = false;
-  for (const [i, prevScore] of scores.entries()) {
-    if (newScore.score > prevScore.score) {
-      scores.splice(i, 0, newScore);
-      found = true;
-      break;
-    }
-  }
+// let scores = [];
+// function updateScores(newScore, scores) {
+//   let found = false;
+//   for (const [i, prevScore] of scores.entries()) {
+//     if (newScore.score > prevScore.score) {
+//       scores.splice(i, 0, newScore);
+//       found = true;
+//       break;
+//     }
+//   }
 
-  if (!found) {
-    scores.push(newScore);
-  }
+//   if (!found) {
+//     scores.push(newScore);
+//   }
 
-  if (scores.length > 10) {
-    scores.length = 10;
-  }
+//   if (scores.length > 10) {
+//     scores.length = 10;
+//   }
 
-  return scores;
-}
+//   return scores;
+// }
 
-async function loadScores() {
-  const response = await fetch("/api/scores")
-  const scores = await response.json()
-}
-  // Modify the DOM to display the scores
+// async function loadScores() {
+//   const response = await fetch("/api/scores")
+//   const scores = await response.json()
+// }
+//   // Modify the DOM to display the scores
