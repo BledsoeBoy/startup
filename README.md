@@ -58,6 +58,7 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Gameplay Interaction** - I had it check to see if the coordinates selected were used on the initial setup and based on those results, and depending on if the ship is hit or missed, the square coordinates change color adn tell you what happened.
 - **Computer play** - I implemented a new computer board that creates a setup for the ships and also attempts to hit the player's ships.
 - **Scoring** - According to the gameplay, the scoring is supposed to be based on turns taken and stores that in local storage for now.
+
 ### Web Services deliverable
 - **Simon deployment** - done!
 - **Node.js/Express HTTP service** - Created an HTTP service using Node.js and Express
@@ -66,3 +67,11 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for scoring.
 - **Frontend calls service endpoints** - I did not have time to implement this.
 Accomplished using multiple git commits with meaningful comments.
+
+## DB deliverable
+
+For this deliverable I stored the turn number as scores in a database using Mongo Atlas.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - Startup now provides backend endpoints for manipulating application data and sends it to Mongo.
+- **Stores data in MongoDB** - Stores my scores (turn number for a user)
