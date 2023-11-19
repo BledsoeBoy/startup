@@ -133,7 +133,7 @@ function startGame() {
       allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
       playerTurn = true
       turnDisplay.textContent = 'Your Turn!'
-      infoDisplay.textContent = 'The game has started'
+      infoDisplay.textContent = 'The game has started! Sink 5 battleships to win!!'
   }
 }
 
@@ -267,7 +267,11 @@ async function saveScore(score) {
     // If there was an error then just track scores locally
     this.updateScoresLocal(newScore);
   }
-  setTimeout(window.location = "scores.html", 2000)
+
+  function delayer() {
+    window.location = "scores.html"
+  }
+  setTimeout(delayer, 5000)
 }
 
 function updateScoresLocal(newScore) {
@@ -279,7 +283,7 @@ function updateScoresLocal(newScore) {
 
   let found = false;
   for (const [i, prevScore] of scores.entries()) {
-    if (newScore > prevScore.score) {
+    if (newScore < prevScore.score) {
       scores.splice(i, 0, newScore);
       found = true;
       break;
