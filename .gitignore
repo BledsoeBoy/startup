@@ -4,3 +4,4 @@ node_modules/
 dbkeys.sh
 dbConfig.json
 WebProgramming.pem
+database.js
