@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 const config = require('./dbConfig.json');
 
-const url = `mongodb+srv://batfat00:braden24@cluster0.vgxkivb.mongodb.net`;
+
 const client = new MongoClient(url);
 const db = client.db('startup');
 const scoreCollection = db.collection('score');
