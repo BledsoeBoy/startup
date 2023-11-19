@@ -75,3 +75,11 @@ For this deliverable I stored the turn number as scores in a database using Mong
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - Startup now provides backend endpoints for manipulating application data and sends it to Mongo.
 - **Stores data in MongoDB** - Stores my scores (turn number for a user)
+
+### Login deliverable
+For this deliverable I associate the turn number with the logged-in user.
+
+- **New user registration** - Creates a new account in the database.
+- **Existing user** - Stores the turn number under the same user if the user already exists. Also allows user to logout or continue playing under same account instead of having to login again.
+- **Use MongoDB to store credentials** - Stores and retrieves both user and their turn number.
+- **Restricts functionality** - You cannot play until you have logged in by limiting navigation bar elements. This is restricted on the frontend only.
