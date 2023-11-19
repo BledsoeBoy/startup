@@ -68,7 +68,7 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Frontend calls service endpoints** - I did not have time to implement this.
 Accomplished using multiple git commits with meaningful comments.
 
-## DB deliverable
+### DB deliverable
 
 For this deliverable I stored the turn number as scores in a database using Mongo Atlas.
 
