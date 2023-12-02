@@ -1,3 +1,7 @@
+// Event Messages
+const GameEndEvent = 'gameEnd';
+const GameStartEvent = 'gameStart';
+
 const playerName = document.querySelector('.player-name');
 playerName.textContent = getPlayerName();
 
@@ -9,8 +13,10 @@ const gamesBoardContainer = document.querySelector('#gamesboard-container')
 const width = 10
 const infoDisplay = document.querySelector('#info')
 const turnDisplay = document.querySelector('#turn-display')
+configureWebSocket();
 
-function createBoard(color, user) {
+
+async function createBoard(color, user) {
   const gameBoardContainer = document.createElement('div')
   gameBoardContainer.classList.add('game-board')
   gameBoardContainer.style.backgroundColor = color
@@ -49,7 +55,7 @@ let notDropped
 
 // Setup Computer's board
 let angle = 0
-function addShipPiece(user, angle, ship, startId) {
+async function addShipPiece(user, angle, ship, startId) {
   const allBoardBlocks = document.querySelectorAll(`#${user} div`)
   let randomBoolean = Math.random() < 0.5
   let isHorizontal = user === 'player' ? angle === 0 : randomBoolean
@@ -104,7 +110,7 @@ ships.forEach(ship => addShipPiece('computer', angle, ship))
 let draggedShip
 
 
-function dropShip() {
+async function dropShip() {
   let boatCoordinates = []
   const boatCoordinatesText = localStorage.getItem('boatCoordinates');
   if(boatCoordinatesText) {
@@ -126,14 +132,17 @@ function dropShip() {
 let gameOver = false
 let playerTurn
 let turnNumber = 0
-startGame()
-function startGame() {
+let socket
+async function startGame() {
   if (playerTurn === undefined) {
       const allBoardBlocks = document.querySelectorAll('#computer div')
       allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
       playerTurn = true
       turnDisplay.textContent = 'Your Turn!'
       infoDisplay.textContent = 'The game has started! Sink 5 battleships to win!!'
+
+      // Let other players know a new game has started
+      broadcastEvent(getPlayerName(), GameStartEvent, {});
   }
 }
 
@@ -260,6 +269,9 @@ async function saveScore(score) {
       body: JSON.stringify(newScore),
     });
 
+    // Let other players know the game has concluded
+    this.broadcastEvent(userName, GameEndEvent, newScore);
+
     // Store what the service gave us as the high scores
     const scores = await response.json();
     localStorage.setItem('scores', JSON.stringify(scores));
@@ -300,6 +312,49 @@ function updateScoresLocal(newScore) {
 
   localStorage.setItem('scores', JSON.stringify(scores));
 }
+
+// Functionality for peer communication using WebSocket
+
+function configureWebSocket() {
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+  this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+  this.socket.onopen = (event) => {
+    this.displayMsg('system', 'game', 'connected');
+  };
+  this.socket.onclose = (event) => {
+    this.displayMsg('system', 'game', 'disconnected');
+  };
+  this.socket.onmessage = async (event) => {
+    const msg = JSON.parse(await event.data.text());
+    if (msg.type === GameEndEvent) {
+      this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
+    } else if (msg.type === GameStartEvent) {
+      this.displayMsg('player', msg.from, `started a new game`);
+    }
+  };
+}
+
+function displayMsg(cls, from, msg) {
+  const chatText = document.querySelector('#player-messages');
+  chatText.innerHTML =
+    `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function broadcastEvent(from, type, value) {
+  const event = {
+    from: from,
+    type: type,
+    value: value,
+  };
+  this.socket.send(JSON.stringify(event));
+}
+
+
+
+
+
+
+
 
 // Without webserver/database, only saving to localstorage:
 

@@ -10,11 +10,32 @@
   flex-direction: column;
   width: 100%;
   align-items: left;
-  padding: 2vmin 6vmin;
-  margin: 2vmin;
+  padding: 1vmin 6vmin;
 }
-  .player-name {
-    color: rgb(235, 157, 93);
+
+#start-btn {
+  margin-top: 1em;
+}
+
+.player-name {
+  color: rgb(235, 157, 93);
+}
+
+#player-messages {
+  padding-top: 0.25em;
+  opacity: 0.7;
+}
+
+.event {
+ color: rgb(69, 69, 69);
+}
+
+  .player-event {
+    color: rgb(165, 220, 235);
+  }
+
+  .system-event {
+    color: rgb(221, 148, 40);
   }
 
   #turn-display {

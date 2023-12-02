@@ -34,21 +34,26 @@
 
       <main class="bg-secondary">
           <div class="players">
-            <div><h1>Playing</h1></div>
-            <div>Player: <span class="player-name"></span></div>
+            <div>
+              <h1>Playing</h1>          
+            </div>
+            <div><h5>Player: <span class="player-name"></span></h5></div>
             <div id="info"></div>
+            <button class="btn btn-success" id="start-btn" onclick="startGame()">Start</button>  
           </div>
           <div class="info-container">
             <div>Who's Turn: <span id="turn-display"></span></div>
             <!-- <div id="score">Turn Number: <span id="#turn-count"></span></div> -->
+          <div id = "player-messages"></div>
           </div>
+
+          <div id="gamesboard-container"></div>
+
           <div class="resetbtn">
             <form method="get" action="setup.html">
               <button type="submit" class="btn btn-danger">Restart</button>
             </form>
           </div>
-
-          <div id="gamesboard-container"></div>
       </main>
 
         <footer class="bg-dark text-white-50">
