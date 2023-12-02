@@ -12,7 +12,7 @@
 .option-container {
   width: 300px;
   height: 600px;
-  background-color: green;
+  background-color: black;
   margin: 2vmin;
   display: flex;
   flex-direction: column;
@@ -30,11 +30,11 @@
 }
 
 .cruiser {
-  background-color: rgb(100, 100, 100);
+  background-color: orange;
 }
 
 .battleship {
-  background-color: red;
+  background-color: green;
 }
 
 .carrier {
