@@ -52,6 +52,7 @@ For this deliverable, I properly styled the application into a styling very clos
 - **Application text content** - Consistent fonts
 - **Application images** - I have an image on the main page, styled to still look pleasing visually.
 - **Buttons** - There is a high use of buttons in my startup, and they are all programmed to have good formatting and visuals. 
+
 ### JavaScript deliverable
 - **Login** - I have working LocalStorage to be able to display the user's login info on the player html page
 - **Gameplay Setup** - I created a way so the coordinates for the ships are stored in a different local storage array, while also demonstrating corresponding square coordinates on the grid as ships, using different colors.
@@ -69,7 +70,6 @@ For this deliverable, I properly styled the application into a styling very clos
 Accomplished using multiple git commits with meaningful comments.
 
 ### DB deliverable
-
 For this deliverable I stored the turn number as scores in a database using Mongo Atlas.
 
 - **MongoDB Atlas database created** - done!
@@ -83,3 +83,11 @@ For this deliverable I associate the turn number with the logged-in user.
 - **Existing user** - Stores the turn number under the same user if the user already exists. Also allows user to logout or continue playing under same account instead of having to login again.
 - **Use MongoDB to store credentials** - Stores and retrieves both user and their turn number.
 - **Restricts functionality** - You cannot play until you have logged in by limiting navigation bar elements. This is restricted on the frontend only.
+
+### WebSocket deliverable 
+For this deliverable I used webSocket to update the scores of each user (turns used to win) on the frontend in realtime.
+
+- **Backend listens for WebSocket connection** - done!
+- **Frontend makes WebSocket connection** - done!
+- **Data sent over WebSocket connection** - done!
+- **WebSocket data displayed** - All user scores display in real time on play.html page. Shows when other users begin or end a game and get their score. 
