@@ -90,4 +90,13 @@ For this deliverable I used webSocket to update the scores of each user (turns u
 - **Backend listens for WebSocket connection** - done!
 - **Frontend makes WebSocket connection** - done!
 - **Data sent over WebSocket connection** - done!
-- **WebSocket data displayed** - All user scores display in real time on play.html page. Shows when other users begin or end a game and get their score. 
+- **WebSocket data displayed** - All user scores display in real time on play.html page. Shows when other users begin or end a game and get their score.
+
+### React deliverable
+
+For this deliverable I converted the application over to use React.
+
+- **Bundled and transpiled** - done!
+- **Components** - Login, start button to play, players, and scores are all React components.
+- **Router** - Routing between login, playing scoring components. Uses BrowserRouter.
+- **Hooks** - Use of UseEffect hooks within my login, setup, play, and scores.
