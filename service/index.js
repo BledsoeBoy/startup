@@ -105,10 +105,10 @@ app.use(function (err, req, res, next) {
   res.status(500).send({ type: err.name, message: err.message });
 });
 
-// Return the application's default page if the path is unknown
-app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
-});
+// // Return the application's default page if the path is unknown
+// app.use((_req, res) => {
+//   res.sendFile('index.html', { root: 'public' });
+// });
 
 // setAuthCookie in the HTTP response
 function setAuthCookie(res, authToken) {

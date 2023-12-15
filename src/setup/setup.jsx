@@ -1,17 +1,18 @@
+import React from 'react';
+import "./setup.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function login() {
     const nameEl = document.querySelector("#name");
     localStorage.setItem("userName", nameEl.value);
-    window.location.href = "play.html";
+    window.location.href = "play";
 }
 
-localStorage.removeItem('boatCoordinates')
+var optionContainer;
+var gamesBoardContainer;
+var width;
 
-const optionContainer = document.querySelector('.option-container')
-const flipButton = document.querySelector('#flip-button')
-const gamesBoardContainer = document.querySelector('#gamesboard-container')
-const width = 10
-
-let angle = 0;
+var angle;
 function flip() {
   const optionShips = Array.from(optionContainer.children)
   if (angle === 0){
@@ -22,8 +23,6 @@ function flip() {
   }
   optionShips.forEach(optionShip => optionShip.style.transform = `rotate(${angle}deg)`)
 }
-
-flipButton.addEventListener('click', flip)
 
 function createBoard(color, user) {
   const gameBoardContainer = document.createElement('div')
@@ -41,8 +40,6 @@ function createBoard(color, user) {
   gamesBoardContainer.append(gameBoardContainer)
 }
 
-createBoard('hsl(200, 100%, 50%)', 'player')
-
 // Creating Ships
 class Ship {
   constructor(name, length) {
@@ -50,14 +47,7 @@ class Ship {
     this.length = length
   } 
 }
-
-const destroyer = new Ship('destroyer', 2)
-const submarine = new Ship('submarine', 3)
-const cruiser = new Ship('cruiser', 3)
-const battleship = new Ship('battleship', 4)
-const carrier = new Ship('carrier', 5)
-
-const ships = [destroyer, submarine, cruiser, battleship, carrier]
+var ships;
 let notDropped
 
 function addShipPiece(user, angle, ship, startId) {
@@ -109,15 +99,7 @@ function addShipPiece(user, angle, ship, startId) {
 }
 
 let draggedShip
-const optionShips = Array.from(optionContainer.children)
-optionShips.forEach(optionShip => optionShip.addEventListener(`dragstart`, dragStart))
-
-const allPlayerBlocks = document.querySelectorAll('#player div')
-allPlayerBlocks.forEach(playerBlock => {
-  playerBlock.addEventListener('dragover', dragOver)
-  playerBlock.addEventListener('drop', dropShip)
-})
-
+let optionShips;
 function dragStart(e) {
   notDropped = false
   draggedShip = e.target;
@@ -156,22 +138,74 @@ function updateBoatCoordinates(user, angle, ship, startId, boatCoordinates) {
   return boatCoordinates;
 }
 
-const startButton = document.querySelector('#start-button')
-const infoDisplay = document.querySelector('#info')
 let gameOver = false
 let playerTurn
 
-
-startButton.addEventListener('click', startGame)
 //Start Game
 function startGame() {
-  if (playerTurn === undefined) {
+    const infoDisplay = document.querySelector('#info')
+    if (playerTurn === undefined) {
     if(optionContainer.children.length != 0)
     {
       infoDisplay.textContent = 'Please place all your pieces first'
     }
     else {
-      window.location = "play.html"
+      window.location = "play"
     }
   }
+}
+
+export function Setup() {
+    React.useEffect(()=> {
+
+        optionContainer = document.querySelector('.option-container')
+        gamesBoardContainer = document.querySelector('#gamesboard-container')
+        width = 10
+        angle = 0;
+        gameOver = false;
+        const destroyer = new Ship('destroyer', 2)
+        const submarine = new Ship('submarine', 3)
+        const cruiser = new Ship('cruiser', 3)
+        const battleship = new Ship('battleship', 4)
+        const carrier = new Ship('carrier', 5)
+        
+        ships = [destroyer, submarine, cruiser, battleship, carrier]
+        createBoard('hsl(200, 100%, 50%)', 'player')
+        optionShips = Array.from(optionContainer.children)
+        optionShips.forEach(optionShip => optionShip.addEventListener(`dragstart`, dragStart))
+
+        const allPlayerBlocks = document.querySelectorAll('#player div')
+        allPlayerBlocks.forEach(playerBlock => {
+            playerBlock.addEventListener('dragover', dragOver)
+            playerBlock.addEventListener('drop', dropShip)
+        })
+
+
+        localStorage.removeItem('boatCoordinates')
+
+    });
+    return (
+      <main className='bg-secondary'>
+      <h2><div id="info">Set up your board</div></h2>
+      <div>
+        <form method="get" action="setup">
+          <button type="submit" className="btn btn-danger">Restart</button>
+        </form>
+      </div>
+      <div className="play-button">
+          <button type="submit" className="btn btn-success play-button" id="start-button" onClick={startGame}>Lets Play!</button>
+      </div>
+      <div className = "boards-container">
+        <button className="btn btn-warning flipbtn" onClick={flip} id="flip-button">Rotate Ships</button>
+      <div className="option-container">
+        <div id="0" className="destroyer-preview destroyer" draggable="true"></div>
+        <div id="1" className="submarine-preview submarine" draggable="true"></div>
+        <div id="2" className="cruiser-preview cruiser" draggable="true"></div>
+        <div id="3" className="battleship-preview battleship" draggable="true"></div>
+        <div id="4" className="carrier-preview carrier" draggable="true"></div>
+      </div>
+      <div id="gamesboard-container"></div>
+      </div>
+    </main>
+    );
 }

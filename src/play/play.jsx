@@ -1,19 +1,20 @@
-// Event Messages
-const GameEndEvent = 'gameEnd';
-const GameStartEvent = 'gameStart';
+import React from 'react';
+import "./play.css";
 
-const playerName = document.querySelector('.player-name');
-playerName.textContent = getPlayerName();
+import { Players } from './players';
+import { GameEvent, GameNotifier } from './gameNotifier';
+import './players.css';
+import { Button } from 'react-bootstrap';
 
-function getPlayerName() {
-  return localStorage.getItem('userName') ?? 'Unknown player';
-}
+export function Play(props){
 
-const gamesBoardContainer = document.querySelector('#gamesboard-container')
+  var playerName;
+
+
+var gamesBoardContainer;
 const width = 10
-const infoDisplay = document.querySelector('#info')
-const turnDisplay = document.querySelector('#turn-display')
-configureWebSocket();
+var infoDisplay;
+var turnDisplay;
 
 
 async function createBoard(color, user) {
@@ -31,9 +32,6 @@ async function createBoard(color, user) {
 
   gamesBoardContainer.append(gameBoardContainer)
 }
-
-createBoard('hsl(200, 100%, 50%)', 'player')
-createBoard('hsl(200, 100%, 50%)', 'computer')
 
 
 // Creating Ships
@@ -104,9 +102,7 @@ async function addShipPiece(user, angle, ship, startId) {
   }
 }
 
-dropShip()
 
-ships.forEach(ship => addShipPiece('computer', angle, ship))
 let draggedShip
 
 
@@ -133,18 +129,6 @@ let gameOver = false
 let playerTurn
 let turnNumber = 0
 let socket
-async function startGame() {
-  if (playerTurn === undefined) {
-      const allBoardBlocks = document.querySelectorAll('#computer div')
-      allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
-      playerTurn = true
-      turnDisplay.textContent = 'Your Turn!'
-      infoDisplay.textContent = 'The game has started! Sink 5 battleships to win!!'
-
-      // Let other players know a new game has started
-      broadcastEvent(getPlayerName(), GameStartEvent, {});
-  }
-}
 
 let playerHits = []
 let computerHits = []
@@ -257,34 +241,7 @@ function checkScore(user, userHits, userSunkShips) {
   }
 }
 
-async function saveScore(score) {
-  const userName = getPlayerName();
-  const date = new Date().toLocaleDateString();
-  const newScore = {name: userName, score: score, date: date};
 
-  try {
-    const response = await fetch('/api/score', {
-      method: 'POST',
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify(newScore),
-    });
-
-    // Let other players know the game has concluded
-    this.broadcastEvent(userName, GameEndEvent, newScore);
-
-    // Store what the service gave us as the high scores
-    const scores = await response.json();
-    localStorage.setItem('scores', JSON.stringify(scores));
-  } catch {
-    // If there was an error then just track scores locally
-    this.updateScoresLocal(newScore);
-  }
-
-  function delayer() {
-    window.location = "scores.html"
-  }
-  setTimeout(delayer, 5000)
-}
 
 function updateScoresLocal(newScore) {
   let scores = [];
@@ -313,84 +270,81 @@ function updateScoresLocal(newScore) {
   localStorage.setItem('scores', JSON.stringify(scores));
 }
 
-// Functionality for peer communication using WebSocket
-
-function configureWebSocket() {
-  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-  this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
-  this.socket.onopen = (event) => {
-    this.displayMsg('system', 'game', 'connected');
-  };
-  this.socket.onclose = (event) => {
-    this.displayMsg('system', 'game', 'disconnected');
-  };
-  this.socket.onmessage = async (event) => {
-    const msg = JSON.parse(await event.data.text());
-    if (msg.type === GameEndEvent) {
-      this.displayMsg('player', msg.from, `scored ${msg.value.score}`);
-    } else if (msg.type === GameStartEvent) {
-      this.displayMsg('player', msg.from, `started a new game`);
+  async function startGame(props) {
+    if (playerTurn === undefined) {
+        const userName = props.userName;
+        const allBoardBlocks = document.querySelectorAll('#computer div')
+        allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
+        playerTurn = true
+        turnDisplay.textContent = 'Your Turn!'
+        infoDisplay.textContent = 'The game has started! Sink 5 battleships to win!!'
+        GameNotifier.broadcastEvent(userName, GameEvent.Start, {});
     }
-  };
+  }  
+
+  async function saveScore(score) {
+    const userName = props.userName;
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date };
+  
+    try {
+      const response = await fetch('/api/score', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(newScore),
+      });
+  
+      // Let other players know the game has concluded
+      GameNotifier.broadcastEvent(userName, GameEvent.End, newScore);
+  
+      // Store what the service gave us as the high scores
+      const scores = await response.json();
+      localStorage.setItem('scores', JSON.stringify(scores));
+    } catch {
+      // If there was an error then just track scores locally
+      updateScoresLocal(newScore);
+    }
+  
+    function delayer() {
+      window.location = "scores"
+    }
+    setTimeout(delayer, 5000)
+  }
+
+  React.useEffect(()=>{   
+        gamesBoardContainer = document.querySelector('#gamesboard-container');
+        infoDisplay = document.querySelector('#info');
+        turnDisplay = document.querySelector('#turn-display');
+        createBoard('hsl(200, 100%, 50%)', 'player')
+        createBoard('hsl(200, 100%, 50%)', 'computer')
+        ships.forEach(ship => addShipPiece('computer', angle, ship))
+        playerName = document.querySelector('.player-name');
+        playerName.textContent = props.userName;
+        dropShip();
+    });
+    return(
+        <main className="bg-secondary">
+          <div className="headplay">
+            <div>
+              <h1>Playing</h1>          
+            </div>
+            <div><h5>Player: <span className="player-name"></span></h5></div>
+            <div id="info"></div>
+            <Button variant='success' id="start-btn" onClick={() => startGame(props)}>
+              Start
+            </Button>
+          </div>
+          <div className="info-container">
+            <div>Who's Turn: <span id="turn-display"></span></div>
+            <Players userName={props.userName} />
+          </div>
+    
+          <div id="gamesboard-container"></div>
+          <div className="resetbtn">
+            <form method="get" action="setup">
+              <button type="submit" className="btn btn-danger">Restart</button>
+            </form>
+          </div>
+      </main>
+    );
 }
-
-function displayMsg(cls, from, msg) {
-  const chatText = document.querySelector('#player-messages');
-  chatText.innerHTML =
-    `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
-}
-
-function broadcastEvent(from, type, value) {
-  const event = {
-    from: from,
-    type: type,
-    value: value,
-  };
-  this.socket.send(JSON.stringify(event));
-}
-
-
-
-
-
-
-
-
-// Without webserver/database, only saving to localstorage:
-
-  // function saveScore(score) {
-  //   const userName = getPlayerName();    
-  //   let scores = [];
-  //       const scoresText = localStorage.getItem('scores');
-  //       if (scoresText) {
-  //         scores = JSON.parse(scoresText);
-  //       }
-  //       scores = updateScores(userName, score, scores);
-    
-  //       localStorage.setItem('scores', JSON.stringify(scores));
-  //       window.location = "scores.html"
-  //     }
-
-  // function updateScores(userName, score, scores) {
-        
-  //       const newScore = { name: userName, score: score, date: date };
-    
-  //       let found = false;
-  //       for (const [i, prevScore] of scores.entries()) {
-  //         if (score > prevScore.score) {
-  //           scores.splice(i, 0, newScore);
-  //           found = true;
-  //           break;
-  //         }
-  //       }
-    
-  //       if (!found) {
-  //         scores.push(newScore);
-  //       }
-    
-  //       if (scores.length > 10) {
-  //         scores.length = 10;
-  //       }
-    
-  //       return scores;
-  // }
