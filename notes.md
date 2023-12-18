@@ -1,3 +1,371 @@
+# Study Guide for Final
+
+What ports are used for HTTP, HTTPS, SSH? 80, 443, 22
+
+What do HTTP status codes in the 300, 400, 500 range indicate? 300- redirection 400- client errors 500 -server errors
+
+What does the HTTP header content-type allows you to do? HTTP header is used to indicate the media type or MIME (Multipurpose Internet Mail Extensions) type of the resource being sent in the HTTP message. It allows the sender to specify the nature of the data contained in the body of the request or response. The Content-Type header is crucial for the recipient (typically a web browser or application) to correctly interpret and process the received data. text/html: application/json: application/xml: multipart/form-data: application/x-www-form-urlencoded:
+
+What do the following attributes of a cookie do?
+Domain:
+
+The Domain attribute specifies the domain for which the cookie is valid. The cookie will be sent to any subdomains of the specified domain. For example, if a cookie is set with the domain ".example.com," it will be sent to "subdomain.example.com" as well as "example.com." This attribute helps manage cookies across different subdomains.
+Path:
+
+The Path attribute indicates the URL path for which the cookie is valid. If a cookie is set with a specific path, it will only be sent to the server for requests that match that path. For example, a cookie with the path "/account" will be sent to requests for URLs like "/account/profile" but not to requests for "/home" or "/blog."
+SameSite:
+
+The SameSite attribute controls when cookies are sent with cross-site requests. It is a security feature designed to mitigate the risk of cross-site request forgery attacks. There are three possible values for SameSite:
+Strict: Cookies are only sent in a first-party context, meaning they are not sent with cross-site requests.
+Lax: Cookies are sent with top-level navigations and with same-site POST requests. It provides a balance between security and usability.
+None: Cookies are sent with both same-site and cross-site requests. This is typically used for third-party cookies but requires the Secure attribute when used in combination with the None value, meaning it is only sent over HTTPS connections.
+HttpOnly:
+
+The HttpOnly attribute is a security feature that, when set, prevents JavaScript from accessing the cookie through the document.cookie API. This helps protect the cookie from certain types of cross-site scripting (XSS) attacks. By limiting access to the cookie to HTTP requests only, the HttpOnly attribute makes it more difficult for malicious scripts to steal sensitive information stored in cookies.
+
+Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /foo/bar?
+Given the following Express service code: What does the following JavaScript fetch return?
+Given the following MongoDB query
+
+{ cost: { $gt: 10 }, name: /fran.*/}
+select all of the matching documents.
+
+The MongoDB query you provided is filtering documents based on two conditions:
+
+Cost is greater than 10:
+
+{ cost: { $gt: 10 } }: This part of the query selects documents where the value of the "cost" field is greater than 10.
+Name matches the regular expression /fran.*/:
+
+{ name: /fran.*/ }: This part of the query selects documents where the value of the "name" field matches the regular expression /fran.*/. This means it will match names that start with "fran" followed by any characters.
+
+Assuming you have a collection of documents and you want to select all documents that satisfy both conditions, the query would look like this:
+
+javascript
+Copy code
+db.yourCollection.find({
+  cost: { $gt: 10 },
+  name: /fran.*/
+})
+This query will retrieve all documents where the "cost" is greater than 10 and the "name" field matches the specified regular expression.
+
+How should you store user passwords in a database? Use Hashing:
+
+Never store plain-text passwords in the database. Instead, use a strong one-way hashing algorithm to convert the password into a fixed-length string of characters. Commonly used hashing algorithms include bcrypt, Argon2, and scrypt.
+Use a Salt:
+
+Implement a unique salt for each user before hashing their password. A salt is a random value that is combined with the password before hashing. This ensures that even if two users have the same password, their hashed passwords will be different due to the unique salt.
+Choose a Strong Hashing Algorithm:
+
+Use a well-established and cryptographically secure hashing algorithm. bcrypt is a popular choice for password hashing due to its adaptive nature and resistance to brute-force attacks.
+Use Key Derivation Functions (KDF):
+
+Key Derivation Functions, like bcrypt, are designed to be slow and computationally intensive. This helps to slow down attackers attempting to crack passwords through brute-force or dictionary attacks.
+Stay Current with Security Best Practices:
+
+Keep abreast of the latest security developments and best practices. Security is an evolving field, and it's important to adapt to new threats and vulnerabilities.
+Enforce Password Policies:
+
+Implement and enforce password policies that encourage users to choose strong and unique passwords. Consider factors such as minimum length, complexity requirements, and expiration periods.
+Implement Account Lockout Mechanisms:
+
+Implement mechanisms to lock user accounts after a certain number of failed login attempts. This helps protect against brute-force attacks.
+Use HTTPS:
+
+Ensure that your application uses HTTPS to encrypt data in transit. This helps protect passwords and other sensitive information while it's being transmitted between the client and server.
+Separate Authentication and Authorization:
+
+Clearly separate the authentication (verifying identity) and authorization (granting access rights) processes. Authentication should focus on securely verifying the user's identity without revealing unnecessary information.
+
+Assuming the following Node.js service code is executing with websockets, what will be logged to the console of the web browser?
+What is the WebSocket protocol used for? The WebSocket protocol is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. It is designed to be implemented in web browsers and web servers but can be used in any application where real-time communication is required. WebSocket is particularly well-suited for scenarios where low-latency communication and frequent data exchange between a client (such as a web browser) and a server are essential.
+
+What is JSX and how are the curly braces rendered? JSX, or JavaScript XML, is a syntax extension for JavaScript that looks similar to XML or HTML. It is commonly associated with the React library, where it is used to describe the structure of UI components. JSX allows developers to write HTML-like code in their JavaScript files, making it easier to work with UI elements and components.
+
+In JSX, you can include JavaScript expressions by enclosing them in curly braces {}. This allows you to embed dynamic content and JavaScript logic within your JSX code. The expressions inside curly braces are evaluated and the results are rendered as part of the final UI.
+
+Here's a simple example of JSX in a React component:
+
+jsx
+Copy code
+import React from 'react';
+
+const MyComponent = () => {
+  const name = 'John Doe';
+  const greeting = <p>Hello, {name}!</p>;
+
+  return greeting;
+};
+
+export default MyComponent;
+In this example:
+
+JSX allows the definition of HTML-like tags (<p> in this case) directly in the JavaScript code.
+The curly braces {} are used to embed the name variable inside the JSX expression.
+The value of name is dynamically inserted into the rendered output, resulting in a personalized greeting.
+When the above component is rendered, it will output:
+
+html
+Copy code
+<p>Hello, John Doe!</p>
+
+Assuming a HTML document with a 
+<div id="root"></div>
+element, what content will the following React component generate?
+      function Welcome(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+<div>
+  <h1>Hello, Sara</h1>
+  <h1>Hello, Cahal</h1>
+  <h1>Hello, Edite</h1>
+</div>
+        
+Assuming a HTML document with a 
+<div id="root"></div>
+element, what content will the following React component generate?
+    function Numbers() { 
+      const numbers = [1, 2, 3, 4, 5];
+      const listItems = numbers.map((number) =>
+        <li>{number}</li>
+      );
+      return(<ul>{listItems}</ul>)
+    }
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(<Numbers/>);
+<div id="root">
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+</div>
+      
+What does the following React component do?
+function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+The provided React component, Example, is a functional component that uses the useState hook to manage state within a functional component. This component represents a simple example of a counter that tracks the number of times a button is clicked.
+
+Let's break down the key aspects of the component:
+
+State Declaration:
+
+const [count, setCount] = useState(0);
+This line uses the useState hook to declare a state variable named count and its associated updater function setCount. The initial value of count is set to 0.
+Rendered JSX:
+
+The component returns JSX that includes a <p> element displaying the current value of the count state variable and a <button> element.
+The text inside the <p> element dynamically shows the number of times the button has been clicked using the curly braces {} for expression interpolation: <p>You clicked {count} times</p>.
+Button Click Handler:
+
+The <button> element has an onClick attribute that specifies an inline arrow function.
+When the button is clicked, the inline arrow function is executed, calling setCount(count + 1). This updates the count state to its current value plus 1.
+In summary, this React component renders a simple user interface with a paragraph (<p>) displaying the current count, and a button (<button>) that, when clicked, increments the count. The state management is handled by the useState hook, which allows functional components to have local state variables. The UI dynamically updates based on the state changes triggered by the button click.
+
+What are React Hooks used for? React Hooks are functions that allow functional components to use state, lifecycle methods, and other React features that were previously only available in class components. They were introduced in React version 16.8 as a way to enable more functionality in functional components, making it easier to reuse stateful logic and manage component lifecycles.
+
+Here are some of the key use cases for React Hooks:
+
+State Management (useState):
+
+The useState hook allows functional components to have local state variables. It takes an initial state as an argument and returns an array with the current state value and a function to update that state. This is particularly useful for managing component-specific state without the need for class components.
+jsx
+Copy code
+const [count, setCount] = useState(0);
+Effect (useEffect):
+
+The useEffect hook is used for handling side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM. It combines the functionality of componentDidMount, componentDidUpdate, and componentWillUnmount lifecycle methods in class components.
+jsx
+Copy code
+useEffect(() => {
+  // Side effect code here
+  console.log('Component did mount or update');
+  // Clean-up function (optional) for componentWillUnmount
+  return () => {
+    console.log('Component will unmount');
+  };
+}, [/* dependency array */]);
+Context (useContext):
+
+The useContext hook allows functional components to consume values from the React context. It simplifies the process of accessing context values without the need for a render prop or higher-order component.
+jsx
+Copy code
+const contextValue = useContext(MyContext);
+Reducer (useReducer):
+
+The useReducer hook is an alternative to useState for managing more complex state logic. It is particularly useful when the next state depends on the previous state and when the state logic becomes more complex.
+jsx
+Copy code
+const [state, dispatch] = useReducer(reducer, initialState);
+Ref (useRef):
+
+The useRef hook creates a mutable object called a ref that can persist across renders. It is commonly used for accessing and interacting with the DOM directly or for persisting values between renders without causing re-renders.
+jsx
+Copy code
+const myRef = useRef(initialValue);
+Custom Hooks:
+
+Developers can create custom hooks to encapsulate and reuse pieces of stateful logic. This promotes code reusability and helps to manage complex logic in a more modular way.
+jsx
+Copy code
+function useCustomHook() {
+  // Custom hook logic here
+}
+React Hooks provide a more functional and concise way to manage state and lifecycle in React components, offering an alternative to class components and promoting the use of functional components. They make it easier to share and reuse logic across components, resulting in cleaner and more maintainable code.
+
+What is the useEffect hook used for? The useEffect hook in React is used for handling side effects in functional components. Side effects are operations or behaviors that occur outside the normal render cycle and may include data fetching, subscriptions, manual DOM manipulations, and more. The useEffect hook allows you to perform such side effects in a functional component and manage their execution over the component's lifecycle.
+
+What does this code do?
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+The provided code is a React component that uses the React Router library for handling navigation and routing in a React application. Let's break down the code to understand its functionality:
+
+BrowserRouter:
+
+The <BrowserRouter> component is a part of the React Router library and provides the context for the routing functionality. It uses the HTML5 History API to keep the UI in sync with the URL.
+Routes and Route Components:
+
+The <Routes> component is used to define the routes in the application.
+The <Route> components are used to specify individual routes along with their corresponding components to render.
+Nested Routes:
+
+The routes are nested within each other, forming a hierarchical structure.
+The top-level <Route> has a path="/", meaning it matches the root URL.
+The element={<Layout />} prop specifies that when the root URL is matched, the <Layout> component should be rendered.
+Child Routes:
+
+The child routes are defined within the top-level <Route> using the index and path attributes.
+<Route index element={<Home />} />: This means that when the root URL is matched, and it's the index route, the <Home> component will be rendered.
+<Route path="blogs" element={<Blogs />} />: This sets up a route for the "/blogs" path, rendering the <Blogs> component.
+<Route path="contact" element={<Contact />} />: This sets up a route for the "/contact" path, rendering the <Contact> component.
+<Route path="*" element={<NoPage />} />: This is a catch-all route that matches any path not covered by the previous routes. It renders the <NoPage> component, which might be a 404 page or an error page.
+In summary, the App component sets up a basic routing structure for a React application using React Router. It defines different routes and their corresponding components, allowing the application to render different content based on the URL path. The components such as <Layout>, <Home>, <Blogs>, <Contact>, and <NoPage> are assumed to be React components responsible for rendering specific parts of the UI.
+
+What role does npm play in web development? npm (Node Package Manager) is a crucial tool in web development, particularly in projects that involve JavaScript, Node.js, and related technologies. Here are some key roles that npm plays in web development:
+
+Package Management:
+
+npm is primarily used for managing packages or libraries that a project depends on. It provides a vast registry of open-source JavaScript packages that developers can easily incorporate into their projects. This simplifies dependency management and allows developers to leverage existing solutions for common tasks.
+Dependency Management:
+
+Web development often involves using various libraries and frameworks. npm allows developers to specify project dependencies in a package.json file, making it easy to share the project with others. It also enables version management, ensuring that the project uses the specified versions of each dependency.
+Module Resolution:
+
+npm facilitates the use of CommonJS or ECMAScript modules in Node.js and front-end development. Developers can install and import modules using npm, and the module resolution system ensures that the correct modules are loaded.
+Command-Line Interface (CLI):
+
+npm provides a command-line interface that allows developers to execute various commands related to package management. Common commands include installing dependencies (npm install), updating packages (npm update), and running scripts defined in the package.json file.
+Script Running:
+
+npm allows developers to define custom scripts in the package.json file. These scripts can be executed using the npm run command. For example, developers can define scripts for running tests, building the project, starting a development server, and more.
+Global and Local Packages:
+
+npm allows the installation of packages either globally or locally. Global packages are installed system-wide and can be used across different projects. Local packages are specific to a project, and their dependencies are isolated.
+Project Initialization:
+
+npm provides a convenient way to initialize a new project by running npm init. This command prompts the developer to answer a series of questions to generate a package.json file with basic project information and dependencies.
+Registry and Publishing:
+
+npm serves as a central registry for JavaScript packages. Developers can publish their own packages to the npm registry, making them available for others to use. This encourages collaboration and code sharing within the community.
+Security Auditing:
+
+npm includes features for auditing the project's dependencies to identify and address security vulnerabilities. Developers can run npm audit to check for security issues and take appropriate actions to mitigate risks.
+In summary, npm plays a central role in web development by providing a reliable and comprehensive package management system for JavaScript and Node.js projects. It simplifies the process of managing dependencies, facilitates code sharing, and offers tools for running scripts and handling various aspects of project development.
+
+What does package.json do in a npm project? The package.json file is a key configuration file in npm (Node Package Manager) projects. It serves multiple purposes and plays a crucial role in managing dependencies, scripts, and metadata for a Node.js or JavaScript project. Here are some of the key functions of the package.json file:
+
+Dependency Management:
+
+The dependencies and devDependencies sections in the package.json file list the project's runtime and development dependencies, respectively. Dependencies are third-party packages or libraries that the project relies on. When someone else clones the project, they can run npm install, and npm will install the specified dependencies.
+json
+Copy code
+"dependencies": {
+  "express": "^4.17.1",
+  "lodash": "^4.17.21"
+},
+"devDependencies": {
+  "eslint": "^7.32.0",
+  "jest": "^27.0.6"
+}
+Versioning and Semver:
+
+Each dependency listed in the package.json file includes a version number, often following semantic versioning (SemVer) conventions. SemVer helps define how versions should be incremented based on the nature of changes (major, minor, patch). This ensures that projects remain compatible with the specified versions of their dependencies.
+Project Metadata:
+
+The package.json file contains metadata about the project, such as the project name, version, description, author, license, and more. This information is used for identification, documentation, and licensing purposes.
+json
+Copy code
+"name": "my-project",
+"version": "1.0.0",
+"description": "A sample project",
+"author": "John Doe",
+"license": "MIT"
+Scripts:
+
+The scripts section allows developers to define custom scripts that can be executed using the npm run command. Common scripts include tasks like starting a development server, running tests, building the project, or any other custom command.
+json
+Copy code
+"scripts": {
+  "start": "node server.js",
+  "test": "jest",
+  "build": "webpack"
+}
+Project Initialization:
+
+The package.json file is generated or modified using the npm init command. This command prompts the developer to provide information about the project, such as the project name, version, description, entry point, test command, repository, keywords, author, and license.
+Lock File:
+
+When dependencies are installed, npm generates a package-lock.json or yarn.lock file, depending on the package manager in use. This file contains an exact, deterministic version and dependency tree, ensuring that subsequent installations use the same versions of packages.
+Security Auditing:
+
+The package.json file is used in conjunction with npm's security features. Developers can run npm audit to check for security vulnerabilities in the project's dependencies and take appropriate actions to address any issues.
+Global Configuration:
+
+The package.json file can also include configuration settings, such as "private": true, to prevent accidental publishing of the project as a public package.
+In summary, the package.json file serves as a central configuration and metadata file for npm projects. It defines the project's dependencies, scripts, and metadata, making it an essential component for managing and sharing Node.js and JavaScript projects.
+
+What does the fetch function do? The fetch function is a modern JavaScript API that provides an easy and flexible way to make HTTP requests in web browsers. It is typically used to retrieve resources from a network, such as fetching data from an API or making requests to a server.
+
+What does node.js do? Node.js is a runtime environment that allows the execution of JavaScript code server-side. It is built on the V8 JavaScript runtime engine, which is the same engine that powers the Google Chrome browser. Node.js is designed to be lightweight, efficient, and scalable, making it well-suited for building server-side and network applications.
+
+What does Vite do? Vite is a build tool and development server designed for modern web development. It focuses on providing a fast and efficient development experience, especially for Vue.js applications, although it can be used with other JavaScript frameworks as well. The name "Vite" is derived from the French word for "fast."
+
 # Study Guide Midterm
 1. In the following code, what does the link element do? 
 The <link> tag defines the relationship between the current document and an external resource.
